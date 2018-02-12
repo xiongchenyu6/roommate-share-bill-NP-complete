@@ -20,7 +20,7 @@ instance Arbitrary SimpleTransactions where
   shrink (SimpleTransactions xs) = map SimpleTransactions (shrink xs)
 
 prop_SumOfAllSplitEqualToSumOfALLPositive :: SimpleTransactions -> Bool
-prop_SumOfAllSplitEqualToSumOfALLPositive (SimpleTransactions l) = (totalTransfor - totalTransforDemand) < 100
+prop_SumOfAllSplitEqualToSumOfALLPositive (SimpleTransactions l) = (totalTransfor - totalTransforDemand) < 0.09
   where
     totl = sum $ snd <$> l
     payByPersion = totl / (fromIntegral (length $ (groupBy ((==) `on` fst) l)))
