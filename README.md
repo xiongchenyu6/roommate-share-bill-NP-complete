@@ -101,3 +101,5 @@ Then in the lambda shell
 ```
 main
 ```
+### How to change data
+ go to ./data folder and change name.txt and transaction.txt
